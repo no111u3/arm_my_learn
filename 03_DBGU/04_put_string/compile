@@ -1,0 +1,29 @@
+#!/bin/sh
+
+OUTPUT=dbgu
+
+CROSS=arm-softfloat-linux-gnueabi-
+
+GCC="$CROSS"gcc
+LD="$CROSS"ld
+OBJCOPY="$CROSS"objcopy
+OBJDUMP="$CROSS"objdump
+SIZE="$CROSS"size
+RM=rm
+
+LDFLAGS="-T elf32-littlearm.lds -Ttext 0"
+
+$RM *.o *.out *.bin *.lss
+
+$GCC startup.S -c -Iinclude
+$GCC init.c -c -Iinclude -Os
+
+$LD startup.o init.o -o $OUTPUT.out $LDFLAGS -n
+
+$OBJCOPY $OUTPUT.out -O binary $OUTPUT.bin
+
+$OBJDUMP -h -s $OUTPUT.out > $OUTPUT.lss
+
+$SIZE $OUTPUT.out
+
+

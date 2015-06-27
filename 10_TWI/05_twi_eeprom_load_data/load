@@ -1,0 +1,5 @@
+#!/bin/sh
+
+OUTPUT=twi
+
+sx -X $OUTPUT.bin > /dev/ttyS0 < /dev/ttyS0

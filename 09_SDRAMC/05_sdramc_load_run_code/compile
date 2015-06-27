@@ -1,0 +1,38 @@
+#!/bin/sh
+
+OUTPUT=sdramc
+
+CROSS=arm-softfloat-linux-gnueabi-
+
+GCC="$CROSS"gcc
+LD="$CROSS"ld
+OBJCOPY="$CROSS"objcopy
+OBJDUMP="$CROSS"objdump
+SIZE="$CROSS"size
+RM=rm
+
+CFLAGS="-c -Iinclude"
+LDFLAGS="-T elf32-littlearm.lds -Ttext 0"
+
+$RM *.o *.out *.bin *.lss
+
+$GCC startup.S $CFLAGS -Os
+$GCC jump.S $CFLAGS -Os
+$GCC asm_irq.S $CFLAGS -Os
+$GCC asm_sys.S $CFLAGS -Os
+$GCC asm_tc.S $CFLAGS -Os
+$GCC init.c $CFLAGS
+$GCC main.c $CFLAGS -Os
+$GCC _aeabi_uidiv.S $CFLAGS -Os
+$GCC _aeabi_uidivmod.S $CFLAGS -Os
+$GCC div0.c $CFLAGS -Os
+
+$LD startup.o asm_irq.o asm_sys.o asm_tc.o jump.o init.o main.o _aeabi_uidiv.o _aeabi_uidivmod.o div0.o -o $OUTPUT.out $LDFLAGS -n
+
+$OBJCOPY $OUTPUT.out -O binary $OUTPUT.bin
+
+$OBJDUMP -h -s $OUTPUT.out > $OUTPUT.lss
+
+$SIZE $OUTPUT.out
+
+

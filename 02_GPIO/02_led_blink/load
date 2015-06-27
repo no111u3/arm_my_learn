@@ -1,0 +1,5 @@
+#!/bin/sh
+
+OUTPUT=leds
+
+sx -X $OUTPUT.bin > /dev/ttyS0 < /dev/ttyS0

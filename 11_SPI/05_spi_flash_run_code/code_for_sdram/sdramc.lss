@@ -1,0 +1,45 @@
+
+sdramc.out:     file format elf32-littlearm
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000108  20000000  20000000  000000a0  2**4
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .rodata.str1.1 00000044  20000108  20000108  000001a8  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  2 .ARM.attributes 00000022  00000000  00000000  000001ec  2**0
+                  CONTENTS, READONLY
+  3 .comment      0000002e  00000000  00000000  0000020e  2**0
+                  CONTENTS, READONLY
+Contents of section .text:
+ 20000000 08009fe5 0fe0a0e1 10ff2fe1 feffffea  ........../.....
+ 20000010 c4000020 0000a0e1 0000a0e1 0000a0e1  ... ............
+ 20000020 0d3ce0e3 eb2013e5 020012e3 fcffff0a  .<... ..........
+ 20000030 ff0000e2 0d3ce0e3 e30003e5 1eff2fe1  .....<......../.
+ 20000040 0d3ce0e3 eb2013e5 010012e3 fcffff0a  .<... ..........
+ 20000050 0d3ce0e3 e70013e5 ff0000e2 1eff2fe1  .<............/.
+ 20000060 10402de9 0040a0e1 000000ea ebffffeb  .@-..@..........
+ 20000070 0100d4e4 000050e3 fbffff1a 1040bde8  ......P......@..
+ 20000080 1eff2fe1 f8402de9 0040a0e1 0250a0e1  ../..@-..@...P..
+ 20000090 016080e0 040000ea e8ffffeb 000055e3  .`............U.
+ 200000a0 0070a0e1 ddffff1b 0170c4e4 060054e1  .p.......p....T.
+ 200000b0 f8ffff3a 0030a0e3 0030c4e5 f840bde8  ...:.0...0...@..
+ 200000c0 1eff2fe1 10402de9 0233a0e3 094ce0e3  ../..@-..3...L..
+ 200000d0 cb3004e5 24009fe5 e0ffffeb 20009fe5  .0..$....... ...
+ 200000e0 deffffeb 032ce0e3 0130a0e3 fb3002e5  .....,...0...0..
+ 200000f0 c71014e5 021321e2 c71004e5 faffffea  ......!.........
+ 20000100 08010020 27010020                    ... '..         
+Contents of section .rodata.str1.1:
+ 20000108 54657374 206d6573 73616765 2066726f  Test message fro
+ 20000118 6d206c6f 61646564 20636f64 650a0043  m loaded code..C
+ 20000128 6f646520 6c6f6164 65642066 726f6d20  ode loaded from 
+ 20000138 65787465 726e616c 20737069 20666c61  external spi fla
+ 20000148 73680a00                             sh..            
+Contents of section .ARM.attributes:
+ 0000 41210000 00616561 62690001 17000000  A!...aeabi......
+ 0010 06020801 12041401 15011703 18011901  ................
+ 0020 1a02                                 ..              
+Contents of section .comment:
+ 0000 00474343 3a202847 656e746f 6f20342e  .GCC: (Gentoo 4.
+ 0010 352e332d 72312070 312e302c 20706965  5.3-r1 p1.0, pie
+ 0020 2d302e34 2e352920 342e352e 3300      -0.4.5) 4.5.3.  

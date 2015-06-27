@@ -1,0 +1,5 @@
+crosscompile tools
+     emerge crossdev
+         crossdev arm-softfloat-linux-gnueabi
+     emerge minicom 
+     emerge gtkterm

@@ -1,0 +1,1 @@
+/** * SDRAMC initing */// SDRAMC initvoid sdramc_init(void);

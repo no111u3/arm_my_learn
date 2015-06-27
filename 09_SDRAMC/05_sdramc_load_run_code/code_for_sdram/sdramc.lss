@@ -1,0 +1,41 @@
+
+sdramc.out:     file format elf32-littlearm
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000000fc  20000000  20000000  000000a0  2**4
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .rodata.str1.1 0000001f  200000fc  200000fc  0000019c  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  2 .ARM.attributes 0000002d  00000000  00000000  000001bb  2**0
+                  CONTENTS, READONLY
+  3 .comment      0000002d  00000000  00000000  000001e8  2**0
+                  CONTENTS, READONLY
+Contents of section .text:
+ 20000000 08009fe5 0fe0a0e1 10ff2fe1 feffffea  ........../.....
+ 20000010 c4000020 0000a0e1 0000a0e1 0000a0e1  ... ............
+ 20000020 0d3ce0e3 eb2013e5 020012e3 fcffff0a  .<... ..........
+ 20000030 ff0000e2 0d3ce0e3 e30003e5 1eff2fe1  .....<......../.
+ 20000040 0d3ce0e3 eb2013e5 010012e3 fcffff0a  .<... ..........
+ 20000050 0d3ce0e3 e70013e5 ff0000e2 1eff2fe1  .<............/.
+ 20000060 10402de9 0040a0e1 000000ea ebffffeb  .@-..@..........
+ 20000070 0100d4e4 000050e3 fbffff1a 1040bde8  ......P......@..
+ 20000080 1eff2fe1 f8402de9 0040a0e1 0250a0e1  ../..@-..@...P..
+ 20000090 016080e0 040000ea e8ffffeb 000055e3  .`............U.
+ 200000a0 0070a0e1 ddffff1b 0170c4e4 060054e1  .p.......p....T.
+ 200000b0 f8ffff3a 0030a0e3 0030c4e5 f840bde8  ...:.0...0...@..
+ 200000c0 1eff2fe1 10402de9 0233a0e3 094ce0e3  ../..@-..3...L..
+ 200000d0 cb3004e5 1c009fe5 e0ffffeb 032ce0e3  .0...........,..
+ 200000e0 0130a0e3 fb3002e5 c71014e5 021321e2  .0...0........!.
+ 200000f0 c71004e5 faffffea fc000020           ...........     
+Contents of section .rodata.str1.1:
+ 200000fc 54657374 206d6573 73616765 2066726f  Test message fro
+ 2000010c 6d206c6f 61646564 20636f64 650a00    m loaded code.. 
+Contents of section .ARM.attributes:
+ 0000 412c0000 00616561 62690001 22000000  A,...aeabi.."...
+ 0010 0541524d 20763454 00060208 01090112  .ARM v4T........
+ 0020 04140115 01170318 011a022c 01        ...........,.   
+Contents of section .comment:
+ 0000 4743433a 20284765 6e746f6f 20342e35  GCC: (Gentoo 4.5
+ 0010 2e332d72 31207031 2e302c20 7069652d  .3-r1 p1.0, pie-
+ 0020 302e342e 35292034 2e352e33 00        0.4.5) 4.5.3.   
